@@ -110,6 +110,16 @@ alias fzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {
 alias vi="nvim"
 alias gs="git status"
 alias config="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+function _tmux()
+{
+    if [[ $# == 0 ]] && command tmux ls >& /dev/null; then
+        command tmux attach \; choose-tree -s
+    else
+        command tmux "$@"
+    fi
+}
+
+alias tmux=_tmux
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
