@@ -118,7 +118,7 @@ function _tmux()
         command tmux "$@"
     fi
 }
-
+bindkey '^I' autosuggest-accept
 alias tmux=_tmux
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
