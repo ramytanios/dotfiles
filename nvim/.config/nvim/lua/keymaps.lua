@@ -62,6 +62,7 @@ keymap.set("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { 
 keymap.set("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
 keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
 keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
+keymap.set("n", "<leader>xx", "<cmd>TroubleToggle lsp_definitions<cr>", { silent = true, noremap = true })
 keymap.set("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
 keymap.set("n", "<leader>tn", function()
 	require("trouble").next({ skip_groups = true, jump = true })
