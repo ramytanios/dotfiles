@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/ramytanios/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/Users/ramytanios/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["leap.nvim"] = {
     loaded = true,
     path = "/Users/ramytanios/.local/share/nvim/site/pack/packer/start/leap.nvim",
@@ -236,6 +241,11 @@ _G.packer_plugins = {
     path = "/Users/ramytanios/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
     url = "https://github.com/simrat39/symbols-outline.nvim"
   },
+  ["telescope-emoji.nvim"] = {
+    loaded = true,
+    path = "/Users/ramytanios/.local/share/nvim/site/pack/packer/start/telescope-emoji.nvim",
+    url = "https://github.com/xiyaowong/telescope-emoji.nvim"
+  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/Users/ramytanios/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
@@ -260,6 +270,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ramytanios/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/ramytanios/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,

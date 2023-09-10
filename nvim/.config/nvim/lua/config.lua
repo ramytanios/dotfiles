@@ -287,7 +287,7 @@ mason_lspconfig.setup({
 		"bashls", -- bash uses npm
 		"sqlls", -- uses npm
 		"jsonls", -- uses npm
-    "clangd"
+		"clangd",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
@@ -300,8 +300,8 @@ mason_null_ls.setup({
 		"prettier", -- ts and js formatter
 		"eslint_d", -- ts and js linter
 		"sqlfluff", -- ts and js linter
-    "clang-format",
-    "cpplint"
+		"clang-format",
+		"cpplint",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
@@ -394,11 +394,12 @@ null_ls.setup({
 	-- setup formatters & linters
 	sources = {
 		formatting.black,
+    formatting.shfmt,
 		formatting.sql_formatter,
 		formatting.stylua,
 		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
 		formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
-    formatting.clang_format,
-    diagnostics.cppling
+		formatting.clang_format,
+		diagnostics.cppling,
 	},
 })
