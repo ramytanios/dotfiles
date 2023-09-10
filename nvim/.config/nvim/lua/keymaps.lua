@@ -43,6 +43,7 @@ keymap.set("n", "<leader>cs", function()
 	tb.colorscheme({ enable_preview = true })
 end)
 vim.api.nvim_set_keymap("n", "<leader>bb", ":Telescope file_browser<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>em", ":Telescope emoji<CR>", { noremap = true })
 
 -- diagnostic in a float
 keymap.set("n", "<leader>fd", function()

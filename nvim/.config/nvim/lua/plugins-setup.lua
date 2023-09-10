@@ -120,6 +120,9 @@ return packer.startup(function(use)
 	-- telescope ui select
 	use({ "nvim-telescope/telescope-ui-select.nvim" })
 
+  -- telescope emojies
+  use ({ "xiyaowong/telescope-emoji.nvim" })
+
 	-- trouble nvim
 	use({ "folke/trouble.nvim" })
 
