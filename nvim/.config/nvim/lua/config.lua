@@ -400,6 +400,6 @@ null_ls.setup({
 		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
 		formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
 		formatting.clang_format,
-		diagnostics.cppling,
+		diagnostics.cpplint,
 	},
 })
