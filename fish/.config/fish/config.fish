@@ -15,6 +15,7 @@ alias gs "git status"
 alias ga "git add"
 alias gc "git commit"
 alias gps "git push"
+alias gl "git log"
 
 # ls
 alias la "eza -la --git --icons"
