@@ -8,6 +8,7 @@ keymap.set("n", "x", '"_x')
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "fo", ":join<CR>")
+keymap.set("n", "<leader>cf", "<cmd>edit $MYVIMRC<CR>")
 
 -- windows plit
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- example /keymap and then clear highlight
