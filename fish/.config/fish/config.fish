@@ -20,3 +20,6 @@ alias gl "git log"
 # ls
 alias la "eza -la --git --icons"
 alias l "eza -l --git --icons"
+
+# zoxide
+zoxide init fish | source
