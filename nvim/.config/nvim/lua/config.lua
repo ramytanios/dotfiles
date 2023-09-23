@@ -26,9 +26,8 @@ telescope.setup({
 		},
 	},
 })
-telescope.load_extension("fzf")
 telescope.load_extension("ui-select")
-telescope.load_extension("file_browser")
+telescope.load_extension("fzf")
 telescope.load_extension("emoji")
 require("nvim-treesitter.install").prefer_git = true
 require("nvim-treesitter.configs").setup({

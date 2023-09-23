@@ -1,4 +1,4 @@
-require("plugins-setup")
+require("plugins")
 require("options")
 require("keymaps")
 local status, _ = pcall(vim.cmd, "colorscheme tokyonight-storm")
