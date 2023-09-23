@@ -103,9 +103,6 @@ return packer.startup(function(use)
   -- function signature LSP
   use({ "ray-x/lsp_signature.nvim" })
 
-  -- colorized brackets
-  use({ "p00f/nvim-ts-rainbow" })
-
   use({
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
