@@ -342,6 +342,7 @@ keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 keymap.set("n", "<leader>f", function()
 	require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 3000 })
 end)
+keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
 
 -- telescope
 local tb = require("telescope.builtin")
