@@ -45,9 +45,6 @@ require("lazy").setup({
 			-- Automatically install LSPs to stdpath for neovim
 			{ "williamboman/mason.nvim", config = true },
 			"williamboman/mason-lspconfig.nvim",
-			-- Useful status updates for LSP
-			-- : `opts = {}` is the same as calling `require('fidget').setup({})`
-			{ "j-hui/fidget.nvim", tag = "legacy", opts = {}, event = "LspAttach" },
 			-- Additional lua configuration, makes nvim stuff amazing!
 			"folke/neodev.nvim",
 		},
@@ -64,14 +61,22 @@ require("lazy").setup({
 		lazy = false,
 	},
 	{
+		"sindrets/diffview.nvim",
+	},
+	{
 		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("lualine").setup({ options = { theme = "tokyonight" } })
-		end,
+		dependencies = { "linrongbin16/lsp-progress.nvim" },
 	},
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{
+		"linrongbin16/lsp-progress.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("lsp-progress").setup()
+		end,
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
@@ -152,6 +157,14 @@ require("lazy").setup({
 	},
 	{
 		"mfussenegger/nvim-lint",
+	},
+})
+
+-- LUALINE
+require("lualine").setup({
+	{ options = { theme = "tokyonight" } },
+	sections = {
+		lualine_x = { require("lsp-progress").progress },
 	},
 })
 
@@ -303,6 +316,15 @@ require("conform").setup({
 	},
 })
 
+-- LSP PROGRESS
+-- listen lsp-progress event and refresh lualine
+vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+	group = "lualine_augroup",
+	pattern = "LspProgressStatusUpdated",
+	callback = require("lualine").refresh,
+})
+
 -- KEYMAPS
 local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jk", "<ESC>")
@@ -376,6 +398,10 @@ keymap.set("n", "<leader>to", "<cmd>TodoTelescope<cr>", { silent = true, noremap
 
 -- oil nvim
 keymap.set("n", "-", require("oil").open)
+
+-- diff view
+vim.api.nvim_set_keymap("n", "<leader>dv", ":DiffviewOpen<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>dvx", ":DiffviewClose<CR>", { noremap = true })
 
 -- VIM OPTIONS
 local opt = vim.opt -- for conciseness
