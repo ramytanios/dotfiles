@@ -309,11 +309,11 @@ require("conform").setup({
 		bash = { "shfmt" },
 		scala = {}, -- fallback to LSP formatter
 	},
-	format_on_save = {
-		lsp_fallback = true,
-		async = false,
-		timeout_ms = 1000,
-	},
+	-- format_on_save = {
+	-- 	lsp_fallback = true,
+	-- 	async = false,
+	-- 	timeout_ms = 1000,
+	-- },
 })
 
 -- LSP PROGRESS
