@@ -243,7 +243,6 @@ cmp.setup({
 })
 
 -- MASON / LSP
-
 local servers = {
 	clangd = {},
 	pyright = {},
@@ -312,7 +311,6 @@ require("conform").setup({
 		cpp = { "clang_format" },
 		lua = { "stylua" },
 		bash = { "shfmt" },
-		scala = {}, -- fallback to LSP formatter
 	},
 	-- format_on_save = {
 	-- 	lsp_fallback = true,
