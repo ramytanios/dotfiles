@@ -111,7 +111,11 @@ require("lazy").setup({
 	{
 		"stevearc/oil.nvim",
 		config = function()
-			require("oil").setup({ view_options = { show_hidden = true } })
+			require("oil").setup({
+				keymaps = { ["<CR>"] = "actions.select" },
+        use_default_keymaps = false,
+				view_options = { show_hidden = true },
+			})
 		end,
 		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -282,7 +286,7 @@ mason_lspconfig.setup_handlers({
 })
 
 -- Special setup for smithy-language-server
--- One could also bootstrap the language server 
+-- One could also bootstrap the language server
 -- cs bootstrap software.amazon.smithy:smithy-language-server:0.2.3 -o smithy-language-server
 -- add it to the path and require("lspconfig").smithy_ls.setup({})
 -- as it will look by default in PATH to an executable smithy-language-server
