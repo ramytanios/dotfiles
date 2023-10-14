@@ -282,6 +282,15 @@ mason_lspconfig.setup_handlers({
 	end,
 })
 
+-- Special setup for smithy-language-server
+-- One could also bootstrap the language server 
+-- cs bootstrap software.amazon.smithy:smithy-language-server:0.2.3 -o smithy-language-server
+-- add it to the path and require("lspconfig").smithy_ls.setup({})
+-- as it will look by default in PATH to an executable smithy-language-server
+require("lspconfig").smithy_ls.setup({
+	cmd = { "cs", "launch", "software.amazon.smithy:smithy-language-server:latest.stable", "--", "0" },
+})
+
 -- LINTING
 local lint = require("lint")
 lint.linters_by_ft = {
