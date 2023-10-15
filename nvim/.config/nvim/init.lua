@@ -65,18 +65,10 @@ require("lazy").setup({
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "linrongbin16/lsp-progress.nvim" },
 	},
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	{
-		"linrongbin16/lsp-progress.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("lsp-progress").setup()
-		end,
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
@@ -113,7 +105,7 @@ require("lazy").setup({
 		config = function()
 			require("oil").setup({
 				keymaps = { ["<CR>"] = "actions.select" },
-        use_default_keymaps = false,
+				use_default_keymaps = false,
 				view_options = { show_hidden = true },
 			})
 		end,
@@ -167,9 +159,6 @@ require("lazy").setup({
 -- LUALINE
 require("lualine").setup({
 	{ options = { theme = "tokyonight" } },
-	sections = {
-		lualine_x = { require("lsp-progress").progress },
-	},
 })
 
 -- TELESCOPE CONFIGURATION
@@ -321,15 +310,6 @@ require("conform").setup({
 	-- 	async = false,
 	-- 	timeout_ms = 1000,
 	-- },
-})
-
--- LSP PROGRESS
--- listen lsp-progress event and refresh lualine
-vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
-vim.api.nvim_create_autocmd("User", {
-	group = "lualine_augroup",
-	pattern = "LspProgressStatusUpdated",
-	callback = require("lualine").refresh,
 })
 
 -- KEYMAPS
