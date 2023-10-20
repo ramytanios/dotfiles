@@ -63,6 +63,7 @@ require("lazy").setup({
 	{
 		"sindrets/diffview.nvim",
 	},
+	{ "axkirillov/easypick.nvim" },
 	{
 		"nvim-lualine/lualine.nvim",
 	},
@@ -179,6 +180,18 @@ telescope.setup({
 telescope.load_extension("ui-select")
 telescope.load_extension("fzf")
 telescope.load_extension("emoji")
+
+-- TELESCOPE PICKERS
+local easypick = require("easypick")
+easypick.setup({
+	pickers = {
+		{
+			name = "ls",
+			command = "ls",
+			previewer = easypick.previewers.default(),
+		},
+	},
+})
 
 -- LSP BORDERS
 local _border = "single"
