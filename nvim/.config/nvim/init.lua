@@ -62,6 +62,7 @@ require("lazy").setup({
 	},
 	{
 		"sindrets/diffview.nvim",
+
 	},
 	{ "axkirillov/easypick.nvim" },
 	{
@@ -301,6 +302,8 @@ local lint = require("lint")
 lint.linters_by_ft = {
 	python = { "pylint" },
 	cpp = { "cpplint" },
+	typescript = { "eslint_d" },
+	javascript = { "eslint_d" },
 }
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
@@ -317,6 +320,12 @@ require("conform").setup({
 		cpp = { "clang_format" },
 		lua = { "stylua" },
 		bash = { "shfmt" },
+		typescript = { "prettier" },
+		javascript = { "prettier" },
+		css = { "prettier" },
+		json = { "prettier" },
+		html = { "prettier" },
+		xml = { "xmlformatter" },
 	},
 	-- format_on_save = {
 	-- 	lsp_fallback = true,
@@ -400,7 +409,7 @@ keymap.set("n", "<leader>to", "<cmd>TodoTelescope<cr>", { silent = true, noremap
 keymap.set("n", "-", require("oil").open)
 
 -- diff view
-vim.api.nvim_set_keymap("n", "<leader>dv", ":DiffviewOpen<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>dv", ":DiffviewOpen<SPACE>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>dvx", ":DiffviewClose<CR>", { noremap = true })
 
 -- VIM OPTIONS
