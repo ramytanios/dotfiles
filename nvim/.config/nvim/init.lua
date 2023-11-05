@@ -62,7 +62,6 @@ require("lazy").setup({
 	},
 	{
 		"sindrets/diffview.nvim",
-
 	},
 	{ "axkirillov/easypick.nvim" },
 	{
@@ -155,6 +154,17 @@ require("lazy").setup({
 	},
 	{
 		"mfussenegger/nvim-lint",
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("nvim-tree").setup({})
+		end,
 	},
 })
 
@@ -343,6 +353,10 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "fo", ":join<CR>")
 keymap.set("n", "<leader>cf", "<cmd>edit $MYVIMRC<CR>")
+
+keymap.set("n", "<leader>tr", function()
+	require("nvim-tree.api").tree.toggle()
+end)
 
 -- windows plit
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- example /keymap and then clear highlight
