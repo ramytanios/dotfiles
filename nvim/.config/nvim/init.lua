@@ -420,7 +420,7 @@ keymap.set("n", "<leader>tr", function()
 end)
 
 -- windows plit
-keymap.set("n", "<leader>nh", ":nohl<CR>") -- example /keymap and then clear highlight
+keymap.set("n", "<leader>noh", ":nohl<CR>") -- example /keymap and then clear highlight
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>ss", "<C-w>s") -- slit window horizontal
 keymap.set("n", "<leader>se", "<C-w>=") -- make split equal width
@@ -449,6 +449,14 @@ keymap.set("n", "<leader>f", function()
 	require("conform").format({ lsp_fallback = true, async = false, timeout_ms = 3000 })
 end)
 keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
+
+-- gitsigns
+local gitsigns = require("gitsigns")
+keymap.set("n", "<leader>nh", gitsigns.next_hunk)
+keymap.set("n", "<leader>ph", gitsigns.preview_hunk)
+keymap.set("n", "<leader>prh", gitsigns.prev_hunk)
+keymap.set("n", "<leader>rh", gitsigns.reset_hunk)
+keymap.set("n", "<leader>gh", gitsigns.select_hunk)
 
 -- telescope
 local tb = require("telescope.builtin")
@@ -516,5 +524,6 @@ opt.clipboard:append("unnamedplus")
 -- split windows
 opt.splitright = true -- vertical split
 opt.splitbelow = true -- horizontal split
+opt.swapfile = false
 
 vim.cmd("colorscheme tokyonight-storm")
