@@ -119,11 +119,6 @@ require("lazy").setup({
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{
-		"eoh-bse/minintro.nvim",
-		config = true,
-		lazy = false,
-	},
-	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
