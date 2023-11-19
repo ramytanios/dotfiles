@@ -191,6 +191,14 @@ require("lazy").setup({
 			vim.notify = require("notify")
 		end,
 	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {},
+		config = function()
+			require("ibl").setup()
+		end,
+	},
 })
 
 -- LUALINE
