@@ -98,7 +98,7 @@ require("lazy").setup({
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
-			require("gitsigns").setup()
+			require("gitsigns").setup({ numhl = true, linehl = true })
 		end,
 	},
 	{
@@ -460,6 +460,7 @@ keymap.set("n", "<leader>ph", gitsigns.preview_hunk)
 keymap.set("n", "<leader>prh", gitsigns.prev_hunk)
 keymap.set("n", "<leader>rh", gitsigns.reset_hunk)
 keymap.set("n", "<leader>gh", gitsigns.select_hunk)
+keymap.set("n", "<leader>lb", gitsigns.toggle_current_line_blame)
 
 -- telescope
 local tb = require("telescope.builtin")
