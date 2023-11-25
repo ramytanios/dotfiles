@@ -269,11 +269,11 @@ easypick.setup({
 })
 
 -- LUASNIP
+-- Based on : https://www.youtube.com/watch?v=FmHhonPjvvA
 local ls = require("luasnip")
 local s = ls.snippet
 local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
-
 ls.add_snippets("scala", {
 	s("ftrait", fmt("trait {}[F[_]]{{ \n" .. "{} \n" .. "}}", { i(1, "Foo"), i(2) })),
 })
