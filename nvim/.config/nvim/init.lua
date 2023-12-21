@@ -30,6 +30,9 @@ require("lazy").setup({
 	"hrsh7th/cmp-nvim-lsp",
 	"onsails/lspkind.nvim",
 	"christoomey/vim-tmux-navigator",
+  { 'kepano/flexoki-neovim', name = 'flexoki' },
+  { 'rebelot/kanagawa.nvim'},
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "VeryLazy",
